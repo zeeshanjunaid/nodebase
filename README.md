@@ -7,7 +7,7 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Next.js 15** with App Router
 - **TypeScript** for type safety
 - **Tailwind CSS v4** for modern styling
-- **Authentication System** - NextAuth.js with login/signup
+- **Authentication System** - NextAuth.js with login/signup and social providers
 - **Database Integration** - Prisma ORM with PostgreSQL
 - **API Layer** - tRPC for type-safe APIs
 - **Comprehensive UI Components** - 60+ pre-built components
@@ -35,6 +35,7 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Data Display**: Table, Chart, Badge, Avatar, Progress
 - **Feedback**: Alert, Toast, Spinner, Skeleton
 - **Interactive**: Button, Toggle, Slider, Command
+- **Authentication**: Login/Signup forms, Social login buttons, Auth layouts
 - **And many more...**
 
 ## 🚀 Getting Started
