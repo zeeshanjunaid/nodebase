@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/form";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 const registerSchema = z
@@ -90,6 +91,13 @@ export function RegisterForm() {
                     variant="outline"
                     disabled={isPending}
                   >
+                    <Image
+                      src="/github.svg"
+                      alt="GitHub"
+                      width={20}
+                      height={20}
+                      className="mr-2"
+                    />
                     Continue with Github
                   </Button>
                   <Button
@@ -98,6 +106,13 @@ export function RegisterForm() {
                     variant="outline"
                     disabled={isPending}
                   >
+                    <Image
+                      src="/google.svg"
+                      alt="Google"
+                      width={20}
+                      height={20}
+                      className="mr-2"
+                    />
                     Continue with Google
                   </Button>
                 </div>
