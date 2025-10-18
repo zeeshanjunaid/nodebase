@@ -12,6 +12,7 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **API Layer** - tRPC for type-safe APIs
 - **Background Jobs** - Inngest for reliable background processing
 - **Development Workflow** - mprocs for parallel development processes
+- **AI Integration** - OpenAI and Google AI SDK for intelligent features
 - **Comprehensive UI Components** - 60+ pre-built components
 - **Responsive Design** - Mobile-first approach
 - **Modern Tooling** - Biome for linting and formatting
@@ -28,6 +29,7 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **API**: tRPC for type-safe APIs
 - **Background Jobs**: Inngest
 - **Process Management**: mprocs
+- **AI Integration**: OpenAI, Google AI SDK
 - **Linting**: Biome
 - **Package Manager**: pnpm
 
@@ -40,6 +42,7 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Feedback**: Alert, Toast, Spinner, Skeleton
 - **Interactive**: Button, Toggle, Slider, Command
 - **Authentication**: Login/Signup forms, Social login buttons, Auth layouts
+- **AI Features**: Text generation, Recipe creation, Intelligent workflows
 - **And many more...**
 
 ## 🚀 Getting Started
@@ -66,7 +69,7 @@ pnpm install
 3. Set up environment variables:
 ```bash
 cp .env.example .env.local
-# Edit .env.local with your database URL and NextAuth secret
+# Edit .env.local with your database URL, NextAuth secret, and AI API keys
 ```
 
 4. Set up the database:
@@ -174,6 +177,8 @@ export default function Example() {
 - [tRPC Documentation](https://trpc.io/docs)
 - [Inngest Documentation](https://www.inngest.com/docs)
 - [mprocs Documentation](https://github.com/pvolok/mprocs)
+- [AI SDK Documentation](https://sdk.vercel.ai/docs)
+- [OpenAI API Documentation](https://platform.openai.com/docs)
 
 ## 🤝 Contributing
 

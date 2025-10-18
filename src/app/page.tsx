@@ -7,12 +7,11 @@ import { toast } from "sonner";
 
 const Page = () => {
   const trpc = useTRPC();
-  const { data } = useQuery(trpc.getWorkflows.queryOptions());
-  const queryClient = useQueryClient();
-  const create = useMutation(
-    trpc.createWorkflow.mutationOptions({
-      onSuccess: () => {
-        queryClient.invalidateQueries(trpc.getWorkflows.queryOptions());
+
+  const testAI = useMutation(
+    trpc.testAI.mutationOptions({
+      onSuccess: (data) => {
+        toast.success(data);
       },
       onError: (error) => {
         toast.error(error.message || "Something went wrong");
@@ -25,18 +24,22 @@ const Page = () => {
         <h1 className="text-4xl font-bold">Nodebase</h1>
 
         <div className="flex flex-col gap-2">
-          {data?.map((workflow) => (
-            <div key={workflow.id}>
-              <h2 className="text-2xl font-bold">{workflow.name}</h2>
-            </div>
-          ))}
+          {testAI.error && (
+            <p className="text-red-500">{testAI.error.message}</p>
+          )}
+          {testAI.data && <div className="text-lg text-gray-500 p-2 rounded-md max-w-3xl overflow-x-auto">{testAI.data}</div>}
         </div>
 
-        <Button size="lg" className="min-w-[200px]" disabled={create.isPending} onClick={() => create.mutate()}>
-          {create.isPending ? (
+        <Button
+          disabled={testAI.isPending}
+          onClick={() => testAI.mutate()}
+          size="lg"
+          className="min-w-[200px]"
+        >
+          {testAI.isPending ? (
             <Loader2Icon className="size-4 animate-spin" />
           ) : (
-            "Create Workflow"
+            "Test AI"
           )}
         </Button>
       </div>
