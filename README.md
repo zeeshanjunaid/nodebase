@@ -7,6 +7,9 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Next.js 15** with App Router
 - **TypeScript** for type safety
 - **Tailwind CSS v4** for modern styling
+- **Authentication System** - NextAuth.js with login/signup
+- **Database Integration** - Prisma ORM with PostgreSQL
+- **API Layer** - tRPC for type-safe APIs
 - **Comprehensive UI Components** - 60+ pre-built components
 - **Responsive Design** - Mobile-first approach
 - **Modern Tooling** - Biome for linting and formatting
@@ -18,6 +21,9 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **UI Components**: shadcn/ui
+- **Authentication**: NextAuth.js
+- **Database**: Prisma ORM + PostgreSQL
+- **API**: tRPC for type-safe APIs
 - **Linting**: Biome
 - **Package Manager**: pnpm
 
@@ -37,6 +43,7 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 
 - Node.js 18+ 
 - pnpm (recommended) or npm
+- PostgreSQL database
 
 ### Installation
 
@@ -51,25 +58,43 @@ cd nodebase
 pnpm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+# Edit .env.local with your database URL and NextAuth secret
+```
+
+4. Set up the database:
+```bash
+pnpm prisma generate
+pnpm prisma db push
+```
+
+5. Run the development server:
 ```bash
 pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📁 Project Structure
 
 ```
 src/
 ├── app/                 # Next.js app directory
+│   ├── (auth)/         # Authentication pages
+│   ├── api/            # API routes
 │   ├── globals.css     # Global styles
 │   ├── layout.tsx      # Root layout
 │   └── page.tsx        # Home page
 ├── components/          # Reusable components
 │   └── ui/             # UI component library
+├── features/           # Feature-based components
+│   └── auth/           # Authentication components
 ├── hooks/              # Custom React hooks
-└── lib/                # Utility functions
+├── lib/                # Utility functions
+├── trpc/               # tRPC configuration
+└── prisma/             # Database schema
 ```
 
 ## 🎨 Styling
@@ -120,6 +145,9 @@ export default function Example() {
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [shadcn/ui Documentation](https://ui.shadcn.com)
+- [NextAuth.js Documentation](https://next-auth.js.org)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [tRPC Documentation](https://trpc.io/docs)
 
 ## 🤝 Contributing
 
