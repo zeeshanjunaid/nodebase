@@ -10,6 +10,8 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Authentication System** - NextAuth.js with login/signup and social providers
 - **Database Integration** - Prisma ORM with PostgreSQL
 - **API Layer** - tRPC for type-safe APIs
+- **Background Jobs** - Inngest for reliable background processing
+- **Development Workflow** - mprocs for parallel development processes
 - **Comprehensive UI Components** - 60+ pre-built components
 - **Responsive Design** - Mobile-first approach
 - **Modern Tooling** - Biome for linting and formatting
@@ -24,6 +26,8 @@ A modern Next.js project with TypeScript, Tailwind CSS v4, and a comprehensive U
 - **Authentication**: NextAuth.js
 - **Database**: Prisma ORM + PostgreSQL
 - **API**: tRPC for type-safe APIs
+- **Background Jobs**: Inngest
+- **Process Management**: mprocs
 - **Linting**: Biome
 - **Package Manager**: pnpm
 
@@ -78,6 +82,23 @@ pnpm dev
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Development with mprocs (Optional)
+
+For a better development experience with parallel processes:
+
+```bash
+pnpm run mprocs
+```
+
+This will start:
+- Next.js development server
+- Prisma Studio
+- TypeScript type checking
+- Linting
+- Build process
+
+All in a split-screen interface for easy monitoring.
+
 ## 📁 Project Structure
 
 ```
@@ -95,7 +116,9 @@ src/
 ├── hooks/              # Custom React hooks
 ├── lib/                # Utility functions
 ├── trpc/               # tRPC configuration
-└── prisma/             # Database schema
+├── inngest/            # Background job processing
+├── prisma/             # Database schema
+└── mprocs.yaml         # Development process configuration
 ```
 
 ## 🎨 Styling
@@ -149,6 +172,8 @@ export default function Example() {
 - [NextAuth.js Documentation](https://next-auth.js.org)
 - [Prisma Documentation](https://www.prisma.io/docs)
 - [tRPC Documentation](https://trpc.io/docs)
+- [Inngest Documentation](https://www.inngest.com/docs)
+- [mprocs Documentation](https://github.com/pvolok/mprocs)
 
 ## 🤝 Contributing
 

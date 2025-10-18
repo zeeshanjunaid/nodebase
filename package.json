@@ -7,10 +7,14 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "type-check": "tsc --noEmit",
+    "mprocs": "mprocs",
+    "mprocs:npm": "mprocs --npm"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@modelcontextprotocol/sdk": "^1.20.1",
     "@prisma/client": "^6.17.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -49,6 +53,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
+    "inngest": "^3.44.3",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.545.0",
     "next": "15.5.5",

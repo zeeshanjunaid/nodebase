@@ -1,0 +1,53 @@
+# mprocs configuration for Nodebase project
+# Run with: mprocs
+
+procs:
+  # Next.js development server
+  "Next.js Dev":
+    shell: "pnpm run dev"
+    env:
+      NODE_ENV: development
+    restart: true
+    stop: "SIGINT"
+
+  # Database migrations and Prisma
+  "Prisma Studio":
+    shell: "pnpm prisma studio"
+    env:
+      NODE_ENV: development
+    restart: true
+    stop: "SIGINT"
+
+  # TypeScript type checking
+  "TypeScript Check":
+    shell: "pnpm run type-check"
+    restart: true
+    stop: "SIGINT"
+
+  # Linting
+  "Lint":
+    shell: "pnpm run lint"
+    restart: true
+    stop: "SIGINT"
+
+  # Build process
+  "Build":
+    shell: "pnpm run build"
+    restart: true
+    stop: "SIGINT"
+
+# Configuration
+hide_keymap_window: false
+mouse_scroll_speed: 3
+scrollback: 1000
+proc_list_width: 20
+
+# Key bindings
+keymap_procs:
+  <C-q>: { c: toggle-focus }
+  <C-a>: { c: focus-term }
+  <C-c>: { c: quit }
+
+keymap_term:
+  <C-q>: { c: toggle-focus }
+  <C-a>: { c: focus-procs }
